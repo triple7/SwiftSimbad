@@ -8,47 +8,47 @@
 import Foundation
 
 public struct SimbadResponse: Codable {
-public var allfluxes: [AllfluxesResponse]?
-public var alltypes: [AlltypesResponse]?
-public var author: [AuthorResponse]?
+public var allfluxes: AllfluxesResponse?
+public var alltypes: AlltypesResponse?
+public var author: AuthorResponse?
 public var basic: BasicResponse?
-public var biblio: [BiblioResponse]?
-public var cat: [CatResponse]?
-public var filter: [FilterResponse]?
-public var flux: [FluxResponse]?
-public var h_link: [H_linkResponse]?
-public var has_ref: [Has_refResponse]?
-public var ident: [IdentResponse]?
-public var ids: [IdsResponse]?
-public var journals: [JournalsResponse]?
-public var keywords: [KeywordsResponse]?
-public var mesDiameter: [MesDiameterResponse]?
-public var mesDistance: [MesDistanceResponse]?
-public var mesFe_h: [MesFe_hResponse]?
-public var mesHerschel: [MesHerschelResponse]?
-public var mesISO: [MesISOResponse]?
-public var mesIUE: [MesIUEResponse]?
-public var mesPLX: [MesPLXResponse]?
-public var mesPM: [MesPMResponse]?
-public var mesRot: [MesRotResponse]?
-public var mesSpT: [MesSpTResponse]?
-public var mesVar: [MesVarResponse]?
-public var mesVelocities: [MesVelocitiesResponse]?
-public var mesXmm: [MesXmmResponse]?
-public var mes_otype: [Mes_otypeResponse]?
-public var otypedef: [OtypedefResponse]?
-public var otypes: [OtypesResponse]?
-public var ref: [RefResponse]?
+public var biblio: BiblioResponse?
+public var cat: CatResponse?
+public var filter: FilterResponse?
+public var flux: FluxResponse?
+public var h_link: H_linkResponse?
+public var has_ref: Has_refResponse?
+public var ident: IdentResponse?
+public var ids: IdsResponse?
+public var journals: JournalsResponse?
+public var keywords: KeywordsResponse?
+public var mesDiameter: MesDiameterResponse?
+public var mesDistance: MesDistanceResponse?
+public var mesFe_h: MesFe_hResponse?
+public var mesHerschel: MesHerschelResponse?
+public var mesISO: MesISOResponse?
+public var mesIUE: MesIUEResponse?
+public var mesPLX: MesPLXResponse?
+public var mesPM: MesPMResponse?
+public var mesRot: MesRotResponse?
+public var mesSpT: MesSpTResponse?
+public var mesVar: MesVarResponse?
+public var mesVelocities: MesVelocitiesResponse?
+public var mesXmm: MesXmmResponse?
+public var mes_otype: Mes_otypeResponse?
+public var otypedef: OtypedefResponse?
+public var otypes: OtypesResponse?
+public var ref: RefResponse?
 
-public mutating func setAllfluxes(_ allfluxes: [AllfluxesResponse]){
+public mutating func setAllfluxes(_ allfluxes: AllfluxesResponse){
 self.allfluxes = allfluxes
 }
 
-public mutating func setAlltypes(_ alltypes: [AlltypesResponse]){
+public mutating func setAlltypes(_ alltypes: AlltypesResponse){
 self.alltypes = alltypes
 }
 
-public mutating func setAuthor(_ author: [AuthorResponse]){
+public mutating func setAuthor(_ author: AuthorResponse){
 self.author = author
 }
 
@@ -56,120 +56,119 @@ public mutating func setBasic(_ basic: BasicResponse){
 self.basic = basic
 }
 
-public mutating func setBiblio(_ biblio: [BiblioResponse]){
+public mutating func setBiblio(_ biblio: BiblioResponse){
 self.biblio = biblio
 }
 
-public mutating func setCat(_ cat: [CatResponse]){
+public mutating func setCat(_ cat: CatResponse){
 self.cat = cat
 }
 
-public mutating func setFilter(_ filter: [FilterResponse]){
+public mutating func setFilter(_ filter: FilterResponse){
 self.filter = filter
 }
 
-public mutating func setFlux(_ flux: [FluxResponse]){
+public mutating func setFlux(_ flux: FluxResponse){
 self.flux = flux
 }
 
-public mutating func setH_link(_ h_link: [H_linkResponse]){
+public mutating func setH_link(_ h_link: H_linkResponse){
 self.h_link = h_link
 }
 
-public mutating func setHas_ref(_ has_ref: [Has_refResponse]){
+public mutating func setHas_ref(_ has_ref: Has_refResponse){
 self.has_ref = has_ref
 }
 
-public mutating func setIdent(_ ident: [IdentResponse]){
+public mutating func setIdent(_ ident: IdentResponse){
 self.ident = ident
 }
 
-public mutating func setIds(_ ids: [IdsResponse]){
+public mutating func setIds(_ ids: IdsResponse){
 self.ids = ids
 }
 
-public mutating func setJournals(_ journals: [JournalsResponse]){
+public mutating func setJournals(_ journals: JournalsResponse){
 self.journals = journals
 }
 
-public mutating func setKeywords(_ keywords: [KeywordsResponse]){
+public mutating func setKeywords(_ keywords: KeywordsResponse){
 self.keywords = keywords
 }
 
-public mutating func setMesDiameter(_ mesDiameter: [MesDiameterResponse]){
+public mutating func setMesDiameter(_ mesDiameter: MesDiameterResponse){
 self.mesDiameter = mesDiameter
 }
 
-public mutating func setMesDistance(_ mesDistance: [MesDistanceResponse]){
+public mutating func setMesDistance(_ mesDistance: MesDistanceResponse){
 self.mesDistance = mesDistance
 }
 
-public mutating func setMesFe_h(_ mesFe_h: [MesFe_hResponse]){
+public mutating func setMesFe_h(_ mesFe_h: MesFe_hResponse){
 self.mesFe_h = mesFe_h
 }
 
-public mutating func setMesHerschel(_ mesHerschel: [MesHerschelResponse]){
+public mutating func setMesHerschel(_ mesHerschel: MesHerschelResponse){
 self.mesHerschel = mesHerschel
 }
 
-public mutating func setMesISO(_ mesISO: [MesISOResponse]){
+public mutating func setMesISO(_ mesISO: MesISOResponse){
 self.mesISO = mesISO
 }
 
-public mutating func setMesIUE(_ mesIUE: [MesIUEResponse]){
+public mutating func setMesIUE(_ mesIUE: MesIUEResponse){
 self.mesIUE = mesIUE
 }
 
-public mutating func setMesPLX(_ mesPLX: [MesPLXResponse]){
+public mutating func setMesPLX(_ mesPLX: MesPLXResponse){
 self.mesPLX = mesPLX
 }
 
-public mutating func setMesPM(_ mesPM: [MesPMResponse]){
+public mutating func setMesPM(_ mesPM: MesPMResponse){
 self.mesPM = mesPM
 }
 
-public mutating func setMesRot(_ mesRot: [MesRotResponse]){
+public mutating func setMesRot(_ mesRot: MesRotResponse){
 self.mesRot = mesRot
 }
 
-public mutating func setMesSpT(_ mesSpT: [MesSpTResponse]){
+public mutating func setMesSpT(_ mesSpT: MesSpTResponse){
 self.mesSpT = mesSpT
 }
 
-public mutating func setMesVar(_ mesVar: [MesVarResponse]){
+public mutating func setMesVar(_ mesVar: MesVarResponse){
 self.mesVar = mesVar
 }
 
-public mutating func setMesVelocities(_ mesVelocities: [MesVelocitiesResponse]){
+public mutating func setMesVelocities(_ mesVelocities: MesVelocitiesResponse){
 self.mesVelocities = mesVelocities
 }
 
-public mutating func setMesXmm(_ mesXmm: [MesXmmResponse]){
+public mutating func setMesXmm(_ mesXmm: MesXmmResponse){
 self.mesXmm = mesXmm
 }
 
-public mutating func setMes_otype(_ mes_otype: [Mes_otypeResponse]){
+public mutating func setMes_otype(_ mes_otype: Mes_otypeResponse){
 self.mes_otype = mes_otype
 }
 
-public mutating func setOtypedef(_ otypedef: [OtypedefResponse]){
+public mutating func setOtypedef(_ otypedef: OtypedefResponse){
 self.otypedef = otypedef
 }
 
-public mutating func setOtypes(_ otypes: [OtypesResponse]){
+public mutating func setOtypes(_ otypes: OtypesResponse){
 self.otypes = otypes
 }
 
-public mutating func setRef(_ ref: [RefResponse]){
+public mutating func setRef(_ ref: RefResponse){
 self.ref = ref
 }
 
 }
 
-
 public struct AllfluxesResponse: Codable{
-var metadata:[String: String]?
-var data: AllfluxesData?
+public var metadata:[String: String]?
+public var data: AllfluxesData?
 }
 
 public struct AllfluxesData: Codable{
@@ -194,8 +193,8 @@ public var z_: Double? // z magnitude
 }
 
 public struct AlltypesResponse: Codable{
-var metadata:[String: String]?
-var data: AlltypesData?
+public var metadata:[String: String]?
+public var data: AlltypesData?
 }
 
 public struct AlltypesData: Codable{
@@ -204,8 +203,8 @@ public var otypes: String? // List of all object types concatenated with pipe
 }
 
 public struct AuthorResponse: Codable{
-var metadata:[String: String]?
-var data: AuthorData?
+public var metadata:[String: String]?
+public var data: AuthorData?
 }
 
 public struct AuthorData: Codable{
@@ -215,8 +214,8 @@ public var pos: Int? // Position of the author in the bib ref
 }
 
 public struct BasicResponse: Codable{
-var metadata:[String: String]?
-var data: BasicData?
+public var metadata:[String: String]?
+public var data: BasicData?
 }
 
 public struct BasicData: Codable{
@@ -290,8 +289,8 @@ public var vlsr_wavelength: String? // Wavelength class for the origin of the LS
 }
 
 public struct BiblioResponse: Codable{
-var metadata:[String: String]?
-var data: BiblioData?
+public var metadata:[String: String]?
+public var data: BiblioData?
 }
 
 public struct BiblioData: Codable{
@@ -300,8 +299,8 @@ public var oidref: Int? // Object internal identifier
 }
 
 public struct CatResponse: Codable{
-var metadata:[String: String]?
-var data: CatData?
+public var metadata:[String: String]?
+public var data: CatData?
 }
 
 public struct CatData: Codable{
@@ -311,8 +310,8 @@ public var size: Int? // Number of objects of the Catalogue in SIMBAD
 }
 
 public struct FilterResponse: Codable{
-var metadata:[String: String]?
-var data: FilterData?
+public var metadata:[String: String]?
+public var data: FilterData?
 }
 
 public struct FilterData: Codable{
@@ -322,8 +321,8 @@ public var unit: String? // physical unit name
 }
 
 public struct FluxResponse: Codable{
-var metadata:[String: String]?
-var data: FluxData?
+public var metadata:[String: String]?
+public var data: FluxData?
 }
 
 public struct FluxData: Codable{
@@ -338,8 +337,8 @@ public var qual: String? // flux quality flag
 }
 
 public struct H_linkResponse: Codable{
-var metadata:[String: String]?
-var data: H_linkData?
+public var metadata:[String: String]?
+public var data: H_linkData?
 }
 
 public struct H_linkData: Codable{
@@ -350,8 +349,8 @@ public var parent: Int? // parent oid
 }
 
 public struct Has_refResponse: Codable{
-var metadata:[String: String]?
-var data: Has_refData?
+public var metadata:[String: String]?
+public var data: Has_refData?
 }
 
 public struct Has_refData: Codable{
@@ -363,8 +362,8 @@ public var ref_raw_id: String? // id like it appears in the article
 }
 
 public struct IdentResponse: Codable{
-var metadata:[String: String]?
-var data: IdentData?
+public var metadata:[String: String]?
+public var data: IdentData?
 }
 
 public struct IdentData: Codable{
@@ -373,8 +372,8 @@ public var oidref: Int? // Object internal identifier
 }
 
 public struct IdsResponse: Codable{
-var metadata:[String: String]?
-var data: IdsData?
+public var metadata:[String: String]?
+public var data: IdsData?
 }
 
 public struct IdsData: Codable{
@@ -383,8 +382,8 @@ public var oidref: Int? // Object internal identifier
 }
 
 public struct JournalsResponse: Codable{
-var metadata:[String: String]?
-var data: JournalsData?
+public var metadata:[String: String]?
+public var data: JournalsData?
 }
 
 public struct JournalsData: Codable{
@@ -394,8 +393,8 @@ public var years: String? // Range of years of this journal in the database
 }
 
 public struct KeywordsResponse: Codable{
-var metadata:[String: String]?
-var data: KeywordsData?
+public var metadata:[String: String]?
+public var data: KeywordsData?
 }
 
 public struct KeywordsData: Codable{
@@ -405,8 +404,8 @@ public var position: Int? // Position of the keyword in the publication
 }
 
 public struct MesDiameterResponse: Codable{
-var metadata:[String: String]?
-var data: MesDiameterData?
+public var metadata:[String: String]?
+public var data: MesDiameterData?
 }
 
 public struct MesDiameterData: Codable{
@@ -424,8 +423,8 @@ public var unit: String? // Unit (mas/km)
 }
 
 public struct MesDistanceResponse: Codable{
-var metadata:[String: String]?
-var data: MesDistanceData?
+public var metadata:[String: String]?
+public var data: MesDistanceData?
 }
 
 public struct MesDistanceData: Codable{
@@ -444,8 +443,8 @@ public var unit: String? // Unit (pc,kpc or Mpc)
 }
 
 public struct MesFe_hResponse: Codable{
-var metadata:[String: String]?
-var data: MesFe_hData?
+public var metadata:[String: String]?
+public var data: MesFe_hData?
 }
 
 public struct MesFe_hData: Codable{
@@ -463,8 +462,8 @@ public var teff: Int? // Effective Temperature
 }
 
 public struct MesHerschelResponse: Codable{
-var metadata:[String: String]?
-var data: MesHerschelData?
+public var metadata:[String: String]?
+public var data: MesHerschelData?
 }
 
 public struct MesHerschelData: Codable{
@@ -476,8 +475,8 @@ public var oidref: Int? // Object internal identifier
 }
 
 public struct MesISOResponse: Codable{
-var metadata:[String: String]?
-var data: MesISOData?
+public var metadata:[String: String]?
+public var data: MesISOData?
 }
 
 public struct MesISOData: Codable{
@@ -491,8 +490,8 @@ public var ra_prec: Int? // Precision (# of decimal positions) associated with t
 }
 
 public struct MesIUEResponse: Codable{
-var metadata:[String: String]?
-var data: MesIUEData?
+public var metadata:[String: String]?
+public var data: MesIUEData?
 }
 
 public struct MesIUEData: Codable{
@@ -520,8 +519,8 @@ public var station: String? // Station (V=Vilspa/G=Goddard)
 }
 
 public struct MesPLXResponse: Codable{
-var metadata:[String: String]?
-var data: MesPLXData?
+public var metadata:[String: String]?
+public var data: MesPLXData?
 }
 
 public struct MesPLXData: Codable{
@@ -535,8 +534,8 @@ public var plx_prec: Int? // Precision (# of decimal positions) associated with 
 }
 
 public struct MesPMResponse: Codable{
-var metadata:[String: String]?
-var data: MesPMData?
+public var metadata:[String: String]?
+public var data: MesPMData?
 }
 
 public struct MesPMData: Codable{
@@ -555,8 +554,8 @@ public var pmra_prec: Int? // Precision (# of decimal positions) associated with
 }
 
 public struct MesRotResponse: Codable{
-var metadata:[String: String]?
-var data: MesRotData?
+public var metadata:[String: String]?
+public var data: MesRotData?
 }
 
 public struct MesRotData: Codable{
@@ -573,8 +572,8 @@ public var vsini_prec: Int? // Precision (# of decimal positions) associated wit
 }
 
 public struct MesSpTResponse: Codable{
-var metadata:[String: String]?
-var data: MesSpTData?
+public var metadata:[String: String]?
+public var data: MesSpTData?
 }
 
 public struct MesSpTData: Codable{
@@ -587,8 +586,8 @@ public var sptype: String? // MK/MSS spectral type
 }
 
 public struct MesVarResponse: Codable{
-var metadata:[String: String]?
-var data: MesVarData?
+public var metadata:[String: String]?
+public var data: MesVarData?
 }
 
 public struct MesVarData: Codable{
@@ -618,8 +617,8 @@ public var vmin_prec: Int? // Precision (# of decimal positions) associated with
 }
 
 public struct MesVelocitiesResponse: Codable{
-var metadata:[String: String]?
-var data: MesVelocitiesData?
+public var metadata:[String: String]?
+public var data: MesVelocitiesData?
 }
 
 public struct MesVelocitiesData: Codable{
@@ -646,8 +645,8 @@ public var wdomain: String? // Wavelength domain (Rad,mm,IR,Opt,UV,XRay,Gam)
 }
 
 public struct MesXmmResponse: Codable{
-var metadata:[String: String]?
-var data: MesXmmData?
+public var metadata:[String: String]?
+public var data: MesXmmData?
 }
 
 public struct MesXmmData: Codable{
@@ -657,8 +656,8 @@ public var oidref: Int? // Object internal identifier
 }
 
 public struct Mes_otypeResponse: Codable{
-var metadata:[String: String]?
-var data: Mes_otypeData?
+public var metadata:[String: String]?
+public var data: Mes_otypeData?
 }
 
 public struct Mes_otypeData: Codable{
@@ -669,8 +668,8 @@ public var otype: String? // Object type
 }
 
 public struct OtypedefResponse: Codable{
-var metadata:[String: String]?
-var data: OtypedefData?
+public var metadata:[String: String]?
+public var data: OtypedefData?
 }
 
 public struct OtypedefData: Codable{
@@ -685,20 +684,20 @@ public var path: String? // Otype path in the hierarchical classification
 }
 
 public struct OtypesResponse: Codable{
-var metadata:[String: String]?
-var data: OtypesData?
+public var metadata:[String: String]?
+public var data: OtypesData?
 }
 
 public struct OtypesData: Codable{
 public var oidref: Int? // Object internal identifier
     public var origin: String? // explanation of origin of this type
 public var otype: String? // Object type
-    public var otype_txt: String? // Object type
+    public var otype_txt:String? // Object type
 }
 
 public struct RefResponse: Codable{
-var metadata:[String: String]?
-var data: RefData?
+public var metadata:[String: String]?
+public var data: RefData?
 }
 
 public struct RefData: Codable{
@@ -714,4 +713,5 @@ public var title: String? // Title
 public var volume: Int? // volume number
 public var year: Int? // Publication year
 }
+
 

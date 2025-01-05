@@ -54,10 +54,12 @@ def get_dtype(dtype):
         return "Double"
     if dtype.lower() == "bool":
         return "Bool"
-    if dtype == "char" or dtype == "VARCHAR" or dtype == "CHAR" or dtype == "TEXT" or dtype == "UNICODECHAR":
+    if dtype == "char" or dtype.lower() in "varchar" or dtype == "CHAR" or dtype == "TEXT" or dtype == "UNICODECHAR":
         return "String"
     if dtype.lower() == "double":
         return "Double"
+    if dtype == "date":
+        return "Date"
     return dtype
 
 
@@ -72,8 +74,8 @@ def generate_responses():
         c = table_name[0].upper()
         table_name = c + table_name[1:]
         print(f"public struct {table_name}Response: Codable" + "{")
-        print("var metadata:[String: String]?")
-        print(f"var data: {table_name}Data?")
+        print("public var metadata:[String: String]?")
+        print(f"public var data: {table_name}Data?")
         print("}")
         print("")
         print(f"public struct {table_name}Data: Codable" + "{")
@@ -93,13 +95,13 @@ def generate_payload():
         name = d[0]
         c = name[0].upper()
         className = c + name[1:]
-        print(f"public var {name}: [{className}Response]?")
+        print(f"public var {name}: {className}Response?")
     print("")
     for d in data[5:]:
         name = d[0]
         c = name[0].upper()
         className = c + name[1:]
-        print(f"public mutating func set{className}(_ {name}: [{className}Response])" + "{")
+        print(f"public mutating func set{className}(_ {name}: {className}Response)" + "{")
         print(f"self.{name} = {name}")
         print("}")
         print("")
@@ -118,4 +120,4 @@ def generate_switch():
 
 
 if __name__ == "__main__":
-    generate_responses()
+    generate_payload()

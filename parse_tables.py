@@ -75,7 +75,7 @@ def generate_responses():
         table_name = c + table_name[1:]
         print(f"public struct {table_name}Response: Codable" + "{")
         print("public var metadata:[String: String]?")
-        print(f"public var data: {table_name}Data?")
+        print(f"public var data: [{table_name}Data]?")
         print("}")
         print("")
         print(f"public struct {table_name}Data: Codable" + "{")
@@ -120,4 +120,4 @@ def generate_switch():
 
 
 if __name__ == "__main__":
-    generate_payload()
+    generate_responses()

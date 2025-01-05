@@ -55,7 +55,7 @@ extension SwiftSimbad {
                 case .author:
                 result.setAuthor(try! JSONDecoder().decode([AuthorResponse].self, from: data!))
                 case .basic:
-                result.setBasic(try! JSONDecoder().decode([BasicResponse].self, from: data!))
+                result.setBasic(try! JSONDecoder().decode(BasicResponse.self, from: data!))
                 case .biblio:
                 result.setBiblio(try! JSONDecoder().decode([BiblioResponse].self, from: data!))
                 case .cat:

@@ -11,7 +11,7 @@ public struct SimbadResponse: Codable {
 public var allfluxes: [AllfluxesResponse]?
 public var alltypes: [AlltypesResponse]?
 public var author: [AuthorResponse]?
-public var basic: [BasicResponse]?
+public var basic: BasicResponse?
 public var biblio: [BiblioResponse]?
 public var cat: [CatResponse]?
 public var filter: [FilterResponse]?
@@ -52,7 +52,7 @@ public mutating func setAuthor(_ author: [AuthorResponse]){
 self.author = author
 }
 
-public mutating func setBasic(_ basic: [BasicResponse]){
+public mutating func setBasic(_ basic: BasicResponse){
 self.basic = basic
 }
 

@@ -1,172 +1,3 @@
-//
-//  SimbadResponse.swift
-//  SwiftSimbad
-//
-//  Created by Yuma decaux on 5/1/2025.
-//
-
-import Foundation
-
-public struct SimbadResponse: Codable {
-public var allfluxes: [AllfluxesResponse]?
-public var alltypes: [AlltypesResponse]?
-public var author: [AuthorResponse]?
-public var basic: [BasicResponse]?
-public var biblio: [BiblioResponse]?
-public var cat: [CatResponse]?
-public var filter: [FilterResponse]?
-public var flux: [FluxResponse]?
-public var h_link: [H_linkResponse]?
-public var has_ref: [Has_refResponse]?
-public var ident: [IdentResponse]?
-public var ids: [IdsResponse]?
-public var journals: [JournalsResponse]?
-public var keywords: [KeywordsResponse]?
-public var mesDiameter: [MesDiameterResponse]?
-public var mesDistance: [MesDistanceResponse]?
-public var mesFe_h: [MesFe_hResponse]?
-public var mesHerschel: [MesHerschelResponse]?
-public var mesISO: [MesISOResponse]?
-public var mesIUE: [MesIUEResponse]?
-public var mesPLX: [MesPLXResponse]?
-public var mesPM: [MesPMResponse]?
-public var mesRot: [MesRotResponse]?
-public var mesSpT: [MesSpTResponse]?
-public var mesVar: [MesVarResponse]?
-public var mesVelocities: [MesVelocitiesResponse]?
-public var mesXmm: [MesXmmResponse]?
-public var mes_otype: [Mes_otypeResponse]?
-public var otypedef: [OtypedefResponse]?
-public var otypes: [OtypesResponse]?
-public var ref: [RefResponse]?
-
-public mutating func setAllfluxes(_ allfluxes: [AllfluxesResponse]){
-self.allfluxes = allfluxes
-}
-
-public mutating func setAlltypes(_ alltypes: [AlltypesResponse]){
-self.alltypes = alltypes
-}
-
-public mutating func setAuthor(_ author: [AuthorResponse]){
-self.author = author
-}
-
-public mutating func setBasic(_ basic: [BasicResponse]){
-self.basic = basic
-}
-
-public mutating func setBiblio(_ biblio: [BiblioResponse]){
-self.biblio = biblio
-}
-
-public mutating func setCat(_ cat: [CatResponse]){
-self.cat = cat
-}
-
-public mutating func setFilter(_ filter: [FilterResponse]){
-self.filter = filter
-}
-
-public mutating func setFlux(_ flux: [FluxResponse]){
-self.flux = flux
-}
-
-public mutating func setH_link(_ h_link: [H_linkResponse]){
-self.h_link = h_link
-}
-
-public mutating func setHas_ref(_ has_ref: [Has_refResponse]){
-self.has_ref = has_ref
-}
-
-public mutating func setIdent(_ ident: [IdentResponse]){
-self.ident = ident
-}
-
-public mutating func setIds(_ ids: [IdsResponse]){
-self.ids = ids
-}
-
-public mutating func setJournals(_ journals: [JournalsResponse]){
-self.journals = journals
-}
-
-public mutating func setKeywords(_ keywords: [KeywordsResponse]){
-self.keywords = keywords
-}
-
-public mutating func setMesDiameter(_ mesDiameter: [MesDiameterResponse]){
-self.mesDiameter = mesDiameter
-}
-
-public mutating func setMesDistance(_ mesDistance: [MesDistanceResponse]){
-self.mesDistance = mesDistance
-}
-
-public mutating func setMesFe_h(_ mesFe_h: [MesFe_hResponse]){
-self.mesFe_h = mesFe_h
-}
-
-public mutating func setMesHerschel(_ mesHerschel: [MesHerschelResponse]){
-self.mesHerschel = mesHerschel
-}
-
-public mutating func setMesISO(_ mesISO: [MesISOResponse]){
-self.mesISO = mesISO
-}
-
-public mutating func setMesIUE(_ mesIUE: [MesIUEResponse]){
-self.mesIUE = mesIUE
-}
-
-public mutating func setMesPLX(_ mesPLX: [MesPLXResponse]){
-self.mesPLX = mesPLX
-}
-
-public mutating func setMesPM(_ mesPM: [MesPMResponse]){
-self.mesPM = mesPM
-}
-
-public mutating func setMesRot(_ mesRot: [MesRotResponse]){
-self.mesRot = mesRot
-}
-
-public mutating func setMesSpT(_ mesSpT: [MesSpTResponse]){
-self.mesSpT = mesSpT
-}
-
-public mutating func setMesVar(_ mesVar: [MesVarResponse]){
-self.mesVar = mesVar
-}
-
-public mutating func setMesVelocities(_ mesVelocities: [MesVelocitiesResponse]){
-self.mesVelocities = mesVelocities
-}
-
-public mutating func setMesXmm(_ mesXmm: [MesXmmResponse]){
-self.mesXmm = mesXmm
-}
-
-public mutating func setMes_otype(_ mes_otype: [Mes_otypeResponse]){
-self.mes_otype = mes_otype
-}
-
-public mutating func setOtypedef(_ otypedef: [OtypedefResponse]){
-self.otypedef = otypedef
-}
-
-public mutating func setOtypes(_ otypes: [OtypesResponse]){
-self.otypes = otypes
-}
-
-public mutating func setRef(_ ref: [RefResponse]){
-self.ref = ref
-}
-
-}
-
-
 public struct AllfluxesResponse: Codable{
 var metadata:[String: String]?
 var data: AllfluxesData?
@@ -280,7 +111,7 @@ public var rvz_wavelength: String? // Wavelength class for the origin of the rad
 public var sp_bibcode: String? // spectral type reference
 public var sp_qual: String? // Spectral type quality
 public var sp_type: String? // MK spectral type
-public var update_date: Date? // Date of last modification
+public var update_date: date? // Date of last modification
 public var vlsr: Double? // velocity in Local Standard of Rest reference frame
 public var vlsr_bibcode: String? // Reference for the origin of the LSR velocity
 public var vlsr_err: Double? // Error incertainty of the VLSR velocity
@@ -691,9 +522,9 @@ var data: OtypesData?
 
 public struct OtypesData: Codable{
 public var oidref: Int? // Object internal identifier
-    public var origin: String? // explanation of origin of this type
+public var origin: VARCHAR(30)? // explanation of origin of this type
 public var otype: String? // Object type
-    public var otype_txt: String? // Object type
+public var otype_txt: VARCHAR(10)? // Object type
 }
 
 public struct RefResponse: Codable{

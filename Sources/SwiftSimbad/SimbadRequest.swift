@@ -13,7 +13,7 @@ public struct SimbadRequest {
     /** simbad request formatter
      Creates a request Url from the API and configured parameters, with TAP sql like queries
      */
-private let APIUrl = "htpps://simbad.cds.unistra.fr/simbad/sim-tap/sync"
+private let APIUrl = "https://simbad.cds.unistra.fr/simbad/sim-tap/sync"
     private let table:SimbadTable
     private let fields:[String]
     private(set) var parameters:[SimbadParameter]

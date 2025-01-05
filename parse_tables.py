@@ -74,7 +74,7 @@ def generate_responses():
         c = table_name[0].upper()
         table_name = c + table_name[1:]
         print(f"public struct {table_name}Response: Codable" + "{")
-        print("public var metadata:[String: String]?")
+        print("public var metadata:[[String: String]]?")
         print(f"public var data: [{table_name}Data]?")
         print("}")
         print("")

@@ -26,6 +26,14 @@ private let APIUrl = "https://simbad.cds.unistra.fr/simbad/sim-tap/sync"
         self.format = format
     }
     
+
+    public init(format: SimbadFormat = .json) {
+        self.table = .alltypes
+        self.fields = []
+        self.parameters = []
+        self.format = format
+    }
+
     
     public func getSelectQuery() -> String {
         let selectFields = fields.joined(separator: ",")

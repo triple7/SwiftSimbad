@@ -27,7 +27,7 @@ extension SwiftSimbad {
         return !gotError
     }
 
-    public func querySimbad(table: SimbadTable, fields: [String], parameters: [SimbadParameter], format: SimbadFormat = .json, token: String? = nil, closure: @escaping (SimbadResponse)-> Void) {
+    public func querySimbad(selectQuery: String? = nil, table: SimbadTable, fields: [String], parameters: [SimbadParameter], format: SimbadFormat = .json, token: String? = nil, closure: @escaping (SimbadResponse)-> Void) {
         /** Gets a TAP (Table Access protocol) result
          Params:
          table: the table to query
@@ -37,13 +37,18 @@ extension SwiftSimbad {
          token: the ADS API token
          closure: the resulting json data
          */
-        let simbadRequest = SimbadRequest(table: table, fields: fields, parameters: parameters, format: format)
+        var simbadRequest:SimbadRequest
+        if let selectQuery = selectQuery {
+            simbadRequest = SimbadRequest(table: table, fields: fields, parameters: parameters, format: format)
+        } else {
+            simbadRequest = SimbadRequest()
+        }
         print(simbadRequest.getUrl().absoluteString)
         let configuration = URLSessionConfiguration.ephemeral
         let queue = OperationQueue.main
         let session = URLSession(configuration: configuration, delegate: self, delegateQueue: queue)
         
-        var request = URLRequest(url: simbadRequest.getUrl())
+        var request = URLRequest(url: selectQuery != nil ? simbadRequest.getUrl(selectQuery) : simbadRequest.getUrl())
         request.httpMethod = "POST"
         if token != nil {
             request.addValue("Bearer \(token!)", forHTTPHeaderField: "Authorization")

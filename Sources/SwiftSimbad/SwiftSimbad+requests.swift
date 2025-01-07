@@ -43,17 +43,17 @@ extension SwiftSimbad {
         } else {
             simbadRequest = SimbadRequest(table: table, fields: fields, parameters: parameters, format: format)
         }
-        print(simbadRequest.getUrl().absoluteString)
         let configuration = URLSessionConfiguration.ephemeral
         let queue = OperationQueue.main
         let session = URLSession(configuration: configuration, delegate: self, delegateQueue: queue)
-        print(selectQuery)
         var request = URLRequest(url: simbadRequest.getUrl(selectQuery))
         request.httpMethod = "POST"
         if token != nil {
             request.addValue("Bearer \(token!)", forHTTPHeaderField: "Authorization")
         }
-        
+
+        print(simbadRequest.getUrl(selectQuery).absoluteString)
+
         let task = session.dataTask(with: request) { [weak self] data, response, error in
             
             var result = SimbadResponse()

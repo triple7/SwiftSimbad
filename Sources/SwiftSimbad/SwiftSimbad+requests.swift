@@ -27,22 +27,29 @@ extension SwiftSimbad {
         return !gotError
     }
 
-    public func querySimbad(table: SimbadTable, fields: [String], parameters: [SimbadParameter], format: SimbadFormat = .json, closure: @escaping (SimbadResponse)-> Void) {
+    public func querySimbad(table: SimbadTable, fields: [String], parameters: [SimbadParameter], format: SimbadFormat = .json, token: String? = nil, closure: @escaping (SimbadResponse)-> Void) {
         /** Gets a TAP (Table Access protocol) result
          Params:
          table: the table to query
          fields: which fields to use
          params: the WHERe clause elements
          format: what format to return
+         token: the ADS API token
          closure: the resulting json data
          */
-        let request = SimbadRequest(table: table, fields: fields, parameters: parameters, format: format)
-        print(request.getUrl().absoluteString)
+        let simbadRequest = SimbadRequest(table: table, fields: fields, parameters: parameters, format: format)
+        print(simbadRequest.getUrl().absoluteString)
         let configuration = URLSessionConfiguration.ephemeral
         let queue = OperationQueue.main
         let session = URLSession(configuration: configuration, delegate: self, delegateQueue: queue)
         
-        let task = session.dataTask(with: request.getUrl()) { [weak self] data, response, error in
+        var request = URLRequest(url: simbadRequest.getUrl())
+        request.httpMethod = "POST"
+        if token != nil {
+            request.addValue("Bearer \(token!)", forHTTPHeaderField: "Authorization")
+        }
+        
+        let task = session.dataTask(with: request) { [weak self] data, response, error in
             
             var result = SimbadResponse()
             if self!.requestIsValid(error: error, response: response) {
@@ -112,7 +119,7 @@ extension SwiftSimbad {
                 result.setRef(try! JSONDecoder().decode(RefResponse.self, from: data!))
                 }
                 
-                self?.sysLog.append(SimbadSyslog(log: .OK, message: "query \(request.getSelectQuery()) result downloaded"))
+                self?.sysLog.append(SimbadSyslog(log: .OK, message: "query \(simbadRequest.getSelectQuery()) result downloaded"))
             }
             closure(result)
             return

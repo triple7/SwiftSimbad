@@ -48,7 +48,7 @@ extension SwiftSimbad {
         let queue = OperationQueue.main
         let session = URLSession(configuration: configuration, delegate: self, delegateQueue: queue)
         
-        var request = URLRequest(url: selectQuery != nil ? simbadRequest.getUrl(selectQuery) : simbadRequest.getUrl())
+        var request = URLRequest(url: simbadRequest.getUrl(selectQuery))
         request.httpMethod = "POST"
         if token != nil {
             request.addValue("Bearer \(token!)", forHTTPHeaderField: "Authorization")

@@ -45,6 +45,7 @@ private let APIUrl = "https://simbad.cds.unistra.fr/simbad/sim-tap/sync"
     public func getUrl(_ query: String? = nil) -> URL {
         var url = URLComponents(string: APIUrl)
         let tapQuery = query != nil ? query! : self.getSelectQuery()
+        print(tapQuery)
         url!.queryItems = [
             URLQueryItem(name: "query", value: tapQuery),
             URLQueryItem(name: "request", value: "doQuery"),

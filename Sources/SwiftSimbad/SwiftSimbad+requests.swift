@@ -47,7 +47,7 @@ extension SwiftSimbad {
         let configuration = URLSessionConfiguration.ephemeral
         let queue = OperationQueue.main
         let session = URLSession(configuration: configuration, delegate: self, delegateQueue: queue)
-        
+        print(selectQuery)
         var request = URLRequest(url: simbadRequest.getUrl(selectQuery))
         request.httpMethod = "POST"
         if token != nil {

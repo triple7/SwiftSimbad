@@ -34,16 +34,18 @@ private let APIUrl = "https://simbad.cds.unistra.fr/simbad/sim-tap/sync"
         }
     
     
-    public func getUrl() -> URL {
+    public func getUrl(_ query: String? = nil) -> URL {
         var url = URLComponents(string: APIUrl)
+        let tapQuery = query != nil ? query! : self.getSelectQuery()
         url!.queryItems = [
-            URLQueryItem(name: "query", value: self.getSelectQuery()),
+            URLQueryItem(name: "query", value: tapQuery),
             URLQueryItem(name: "request", value: "doQuery"),
             URLQueryItem(name: "lang", value: "request"),
             URLQueryItem(name: "format", value: self.format.id)
         ]
         return url!.url!
     }
-
+    
+    
 }
 

@@ -39,9 +39,9 @@ extension SwiftSimbad {
          */
         var simbadRequest:SimbadRequest
         if let selectQuery = selectQuery {
-            simbadRequest = SimbadRequest(table: table, fields: fields, parameters: parameters, format: format)
-        } else {
             simbadRequest = SimbadRequest()
+        } else {
+            simbadRequest = SimbadRequest(table: table, fields: fields, parameters: parameters, format: format)
         }
         print(simbadRequest.getUrl().absoluteString)
         let configuration = URLSessionConfiguration.ephemeral

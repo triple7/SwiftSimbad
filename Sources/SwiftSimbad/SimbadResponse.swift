@@ -11,6 +11,6 @@ import SwiftQValue
 
 public struct SimbadResponse: Codable {
     public var metadata:[[String: String]]
-    public var data: [QObject]
+    public var data: QObject
 }
 

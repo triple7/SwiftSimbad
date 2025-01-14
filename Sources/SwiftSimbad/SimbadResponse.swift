@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import SwiftQValue
 
 
 public struct SimbadResponse: Codable {
     public var metadata:[[String: String]]
-    public var data: [[String]]
+    public var data: [QObject]
 }
 

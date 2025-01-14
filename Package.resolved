@@ -1,0 +1,15 @@
+{
+  "originHash" : "767524ff324a7f6170087100d257f331bf8fa414e95f26cc10edde36216d7e1c",
+  "pins" : [
+    {
+      "identity" : "swiftqvalue",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/triple7/SwiftQValue",
+      "state" : {
+        "branch" : "main",
+        "revision" : "12d465537199544c00e4411fc2c21fa2124ede9d"
+      }
+    }
+  ],
+  "version" : 3
+}

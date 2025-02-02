@@ -20,7 +20,6 @@ public struct SimbadSyslog:CustomStringConvertible {
 
         self.log = log
                   self.message = message
-        print("Simbad: \(log) \(message)")
     }
     
     public var description:String {

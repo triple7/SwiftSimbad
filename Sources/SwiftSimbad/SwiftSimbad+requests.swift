@@ -52,12 +52,12 @@ extension SwiftSimbad {
             request.addValue("Bearer \(token!)", forHTTPHeaderField: "Authorization")
         }
 
-        print(simbadRequest.getUrl(selectQuery).absoluteString)
+//        print(simbadRequest.getUrl(selectQuery).absoluteString)
 
         let task = session.dataTask(with: request) { [weak self] data, response, error in
             
             if self!.requestIsValid(error: error, response: response) {
-                print(String(data: data!, encoding: .utf8))
+//                print(String(data: data!, encoding: .utf8))
                 let result = try! JSONDecoder().decode(SimbadResponse.self, from: data!)
 
                 self?.sysLog.append(SimbadSyslog(log: .OK, message: "query \(simbadRequest.getSelectQuery()) result downloaded"))
